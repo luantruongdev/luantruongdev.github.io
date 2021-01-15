@@ -4,6 +4,9 @@
 
 
 ## License
+<details>
+<summary>Click to expand!</summary>
+
 **Creative Commons Attribution 3.0** - http://creativecommons.org/licenses/by/3.0/
 
 
@@ -14,7 +17,8 @@ https://github.com/pozh/Initio/issues
 
 
 
-## Credits
+**Credits**
 * Design and development: **Sergey Pozhilov** - http://pozhilov.com
 * More free templates by Sergey: http://gettemplate.com
 
+</details>
