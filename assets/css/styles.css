@@ -107,6 +107,7 @@ body {
   }
 
 
+.navbar-default .navbar-brand { font-family: "Open sans", helvetica, arial; font-size: 24px; color:white; padding:0 0 0 15px; margin:12px 0 0 0; }
 .navbar-default .dropdown ul.dropdown-menu > li > a {
   color: #454545;
 }
