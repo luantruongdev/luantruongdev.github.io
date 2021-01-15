@@ -93,7 +93,7 @@ jQuery(document).ready(function ($) {
 	// 	$('html, body').animate({ scrollTop: $(this.hash).offset().top - 50 }, 500);
 	// 	return false;
 	// });
-
+	//Smooth scroll
 	$('.smooth-goto').on('click', function () {
 		$('html, body').animate({ scrollTop: $(this.hash).offset().top - 50 },
 			Math.abs(window.scrollY - $(this.hash).offset().top) * 0.7);
@@ -103,7 +103,18 @@ jQuery(document).ready(function ($) {
 	// $('#carousel-example-generic').carousel();
 	// $('#carousel-example-2').carousel();
 	// 4s for new slide in carousel
-	$('.carousel').carousel({
-		interval: 4000
-	})
+	// $('.carousel').carousel({
+	// 	interval: 4000
+	// })
+
+	//Navigation bar headroom
+	$(".headroom").headroom({
+		"tolerance": 20,
+		"offset": 50,
+		"classes": {
+			"initial": "animated",
+			"pinned": "slideDown",
+			"unpinned": "slideUp"
+		}
+	});
 });

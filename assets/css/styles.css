@@ -107,7 +107,7 @@ body {
   }
 
 
-.navbar-default .navbar-brand { font-family: "Open sans", helvetica, arial; font-size: 24px; color:white; padding:0 0 0 15px; margin:12px 0 0 0; }
+
 .navbar-default .dropdown ul.dropdown-menu > li > a {
   color: #454545;
 }
@@ -137,6 +137,10 @@ body {
   background-color: #ffffff;
   color: #000000;
 }
+.headroom { -webkit-transition: all 0.4s ease-out; 
+	-moz-transition: all 0.4s ease-out; 
+	-o-transition: all 0.4s ease-out; 
+	transition: all 0.4s ease-out; }
 /****************************************************************************************
 
 
