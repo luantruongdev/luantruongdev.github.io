@@ -121,6 +121,11 @@ jQuery(document).ready(function ($) {
 	// 		$(this).val("Yes");
 	// 	}
 	// });
+	$(".skillbar").each(function () {
+		$(this).find(".skillbar-inner").animate({
+			width: $(this).attr("data-width")
+		}, 6000)
+	});
 
 });
 
