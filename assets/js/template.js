@@ -38,32 +38,7 @@ jQuery(document).ready(function ($) {
 
 
 	// This part is for smooth scroll function
-	// Add smooth scrolling to all links
-	// $("a").on('click', function (event) {
-
-	// 	// Make sure this.hash has a value before overriding default behavior
-	// 	if (this.hash !== "") {
-	// 		// Prevent default anchor click behavior
-	// 		// event.preventDefault();
-
-	// 		// Store hash
-	// 		var hash = this.hash;
-
-	// 		// Using jQuery's animate() method to add smooth page scroll
-	// 		// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-	// 		$('html, body').animate({
-	// 			scrollTop: $(hash).offset().top
-	// 		}, 1000, function () {
-
-	// 			// Add hash (#) to URL when done scrolling (default click behavior)
-	// 			window.location.hash = hash;
-	// 		});
-	// 		return false;
-	// 	} // End if
-	// });
-
-
-	// This part is for smooth scroll function
+	// Add smooth scrolling to all div that has .smooth-goto
 	$('.smooth-goto').on('click', function (event) {
 
 		// Make sure this.hash has a value before overriding default behavior
@@ -78,7 +53,7 @@ jQuery(document).ready(function ($) {
 			// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
 			$('html, body').animate({
 				scrollTop: $(hash).offset().top - 50
-			}, Math.abs(window.scrollY - $(this.hash).offset().top) * 0.7, function () {
+			}, 500, function () {
 
 				// Add hash (#) to URL when done scrolling (default click behavior)
 				window.location.hash = hash;
@@ -86,6 +61,31 @@ jQuery(document).ready(function ($) {
 			return false;
 		} // End if
 	});
+
+
+	// // This part is for smooth scroll function
+	// $('.smooth-goto').on('click', function (event) {
+
+	// 	// Make sure this.hash has a value before overriding default behavior
+	// 	if (this.hash !== "") {
+	// 		// Prevent default anchor click behavior
+	// 		event.preventDefault();
+
+	// 		// Store hash
+	// 		var hash = this.hash;
+
+	// 		// Using jQuery's animate() method to add smooth page scroll
+	// 		// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+	// 		$('html, body').animate({
+	// 			scrollTop: $(hash).offset().top - 50
+	// 		}, Math.abs(window.scrollY - $(this.hash).offset().top) * 0.7, function () {
+
+	// 			// Add hash (#) to URL when done scrolling (default click behavior)
+	// 			window.location.hash = hash;
+	// 		});
+	// 		return false;
+	// 	} // End if
+	// });
 
 
 
@@ -187,3 +187,36 @@ function easeInOutCubic(t, b, c, d) {
 	t -= 2;
 	return c / 2 * (t * t * t + 2) + b;
 };
+// end button scroll top
+
+// smooth scroll to anchor with pure js
+// Vanilla JavaScript Scroll to Anchor, every div that has smooth-scroll class
+// @ https://perishablepress.com/vanilla-javascript-scroll-anchor/
+// (function () {
+// 	scrollTo();
+// })();
+
+// function scrollTo() {
+// 	const links = document.querySelectorAll('.smooth-scroll');
+// 	links.forEach(each => (each.onclick = scrollAnchors));
+// }
+
+// function scrollAnchors(e, respond = null) {
+// 	const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
+// 	e.preventDefault();
+// 	var targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
+// 	const targetAnchor = document.querySelector(targetID);
+// 	if (!targetAnchor) return;
+// 	const originalTop = distanceToTop(targetAnchor);
+// 	window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
+// 	const checkIfDone = setInterval(function () {
+// 		const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+// 		if (distanceToTop(targetAnchor) === 0 || atBottom) {
+// 			targetAnchor.tabIndex = '-1';
+// 			targetAnchor.focus();
+// 			window.history.pushState('', '', targetID);
+// 			clearInterval(checkIfDone);
+// 		}
+// 	}, 100);
+// }
+// end smooth scroll to anchor with pure js
