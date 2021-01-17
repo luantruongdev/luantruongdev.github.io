@@ -121,11 +121,7 @@ jQuery(document).ready(function ($) {
 	// 		$(this).val("Yes");
 	// 	}
 	// });
-	$(".skillbar").each(function () {
-		$(this).find(".skillbar-inner").animate({
-			width: $(this).attr("data-width")
-		}, 6000)
-	});
+
 
 });
 
@@ -142,6 +138,7 @@ function btnShowHide(btnID, divID, msg) {
 		btnID_rcv.innerHTML = "Show " + msg;
 	}
 }
+
 
 // button scroll to top
 const backToTopButton = document.querySelector("#back-to-top-btn");
@@ -225,3 +222,26 @@ function easeInOutCubic(t, b, c, d) {
 // 	}, 100);
 // }
 // end smooth scroll to anchor with pure js
+
+// progress bar with pure js
+$(function () {
+	var $animation_elements = $('.progressAnimation');
+
+	$(window).on('scroll resize', function () {
+		var viewportHeight = document.documentElement.clientHeight;
+
+		$animation_elements.each(function () {
+			var $el = $(this);
+			var position = this.getBoundingClientRect();
+
+			if (position.top > viewportHeight || position.bottom < 0) {
+				this.inView && $el.css({ width: 0 });
+				this.inView = false;
+			} else {
+				//3 for progressbar's width = 300px, 4 for progressbar's width = 400px ...
+				!this.inView && $el.css({ width: 3 * $el.data("percent") });
+				this.inView = true;
+			}
+		});
+	});
+});

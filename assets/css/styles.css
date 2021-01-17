@@ -313,11 +313,11 @@ img {
 	/* text-transform: uppercase; */
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #333;
-	-webkit-border-radius: 0px;
+	-webkit-border-radius: 25px;
 	-webkit-background-clip: padding-box;
-	-moz-border-radius: 0px;
+	-moz-border-radius: 25px;
 	-moz-background-clip: padding;
-	border-radius: 0px;
+	border-radius: 25px;
 	background-clip: padding-box;
 	-webkit-transition-property: all;
 	-moz-transition-property: all;
@@ -332,7 +332,7 @@ img {
 	padding: 12px 35px;
 	text-shadow: 0 1px 0px #780d33;
   }
-.btn-big {
+.btn-uppercase {
   font-size: 12px;
   font-size: 0.75rem;
   text-decoration: none;
@@ -971,18 +971,18 @@ footer.entry-meta .meta-in {
 .jumbotron h5, .jumbotron h6 { line-height: 1.3em; }
 
 
-/*  */
-.skillbar {
+/* Animation progressbar styling  */
+.progressBackground{
 	position:relative;
 	display:block;
 	margin-top: 10px;
 	margin-bottom: 30px;
-	width:50%;
+	width:300px;
 	background:#b9b9b9;
 	height:25px;
-	border-radius:10px;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
+	border-radius:25px;
+	-moz-border-radius:25px;
+	-webkit-border-radius:25px;
 	-webkit-transition:0.4s linear;
 	-moz-transition:0.4s linear;
 	-ms-transition:0.4s linear;
@@ -993,26 +993,27 @@ footer.entry-meta .meta-in {
 	-ms-transition-property:width, background-color;
 	-o-transition-property:width, background-color;
 	transition-property:width, background-color;
-  }
-    	
-  .skillbar-inner {
+}
+
+.progressAnimation {
 	height:100%;
 	width:0px;
 	background:#bd1550;
-	border-radius:10px;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-  }
-  
-  .skillbar-percent {
+	border-radius:25px;
+	-moz-border-radius:25px;
+	-webkit-border-radius:25px;
+	transition: width 8s;
+}
+
+.progress-percent {
 	position: absolute;
 	right: -30px;
 	top:0.5px;
 	font-size: 14px;
-  }
-
-
-  .skillbar-title {
+	}
+	
+	
+.progress-title {
 	position:absolute;
 	top:0;
 	left:10px;
