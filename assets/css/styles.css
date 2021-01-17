@@ -1002,7 +1002,7 @@ footer.entry-meta .meta-in {
 	border-radius:25px;
 	-moz-border-radius:25px;
 	-webkit-border-radius:25px;
-	transition: width 3s;
+	transition: width 3s; /* control the speed of animation*/
 }
 
 .progress-percent {

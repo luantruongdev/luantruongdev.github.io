@@ -150,7 +150,7 @@
 						the plane through a radio module and receive there turned values. In addition to this
 						"translation work", the gateway must be an autonomous system in order to limit the time
 						operators have to spend on it - for instance, it needs to update automatically. STERELA is
-						implementing an automated testing tool for Airbus which is composed of twoparts: a test box
+						implementing an automated testing tool for Airbus which is composed of two parts: a test box
 						located on the plane which implements the tests, and a gateway to mediate wireless
 						communication between the test box and a workstation. Making this communication wireless has
 						many advantages such as making the testing easier, cheaper and faster as no cables are
@@ -161,8 +161,8 @@
 					<p style="text-align: justify;"> The objective is to conceive and implement a gateway machine (PC or
 						micro computer such
 						as a
-						Raspberry Pi) that serves the following functions:
-					<ul>
+						Raspberry Pi) that serves the following functions:</p>
+					<ul style="text-align: justify;">
 						<li>Communicate with the test box through a radio module (XBee)</li>
 						<li>Communicate with the ESAO workstation through the IBMK3 protocol (Airbus protocol
 							based on Ethernet UDP)</li>
@@ -172,33 +172,137 @@
 						<li>Manage the timeouts (if a command fails to send, our machine has to send it again)
 						</li>
 					</ul>
-					We will also provide a software documentation at the end of this project.
+					<p style="text-align: justify;"> We will also provide a software documentation at the end of this
+						project.
 					</p>
 					<div class="text-right">
-						<button id=btnArchi class="btn btn-primary btn-xs"
-							onclick="btnShowHide('btnArchi','divArchi','Architecture')">Show architecture</button>
+						<button id=btnArchi class="btn btn-primary btn-xs" style="margin-top: -0.5cm;"
+							onclick="btnShowHide('btnArchi','divArchi','architecture')">Show architecture</button>
 					</div>
 					<div id="divArchi" style="display: none;"><img
 							src="./assets/resource/InnovativeProject/global_archi.png" alt="">
 					</div>
 
 
-					<h3>Project Management and Organization</h3>
-					<p style="text-align: justify;">To establish a first temporal organization we wrote a Gantt diagram
-						as follow:
-					</p>
+					<h3>Project organization</h3>
+					<hr style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
+					<p style="text-align: justify;"> As mentioned in <a href="./innovationHumanity.html">Innovation and
+							Humanity</a> module, my team and i applied directly what we have learnt in this training
+						unit to this project's management.
+						To establish a first temporal organization we wrote a Gantt diagram
+						as follow: </p>
 					<div class="text-right">
-						<button id=btnGantt class="btn btn-primary btn-xs"
+						<button id="btnGantt" class="btn btn-primary btn-xs"
+							style="margin-top: -0.5cm;margin-bottom: 0.5cm;"
 							onclick="btnShowHide('btnGantt','divGantt','timeline')">Show timeline</button>
 					</div>
 					<div id="divGantt" style="display: none;"><img src="./assets/resource/InnovativeProject/gantt.png"
 							alt="">
 					</div>
+					<p style="text-align: justify;">
+						For the work distribution within the team, we separated the project into 3 main parts:
+						<strong>Radio frequency controller</strong>, <strong>UDP controller</strong> and <strong>Parser
+						</strong>
+						(more detail can be found in <a href="#technicalDev" class="smooth-goto">Technical
+							development</a>
+						section).
+					</p>
+					<p style="text-align: justify;">
+						One special thing about this project is that our clients at Airbus and Sterela are also our
+						technical mentor, who have long-standing experience in aeronautic and embedded system
+						engineering. We also organized weekly meeting with our client at Airbus and
+						Sterela in order to understand what kind of Proof of Concept that were expecting (does the PoC
+						just need to work or a more scalable PoC for future project is more relevant).
+						Our goal is to as mush as possible achieve a milestone every week, so we can discuss
+						about our progression in each weekly meeting. Therefore, when an obstacle or a technical
+						modification occured, we could quickly improvise, adapt and overcome.
+					</p>
+					<h3 id="technicalDev">Technical development</h3>
 					<hr style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
-					<h3>Technical development</h3>
-					<hr style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
+					<h4>Hardware development</h4>
+					<p style="text-align: justify;">There are several requirements on the <strong>hardware</strong>
+						level. The
+						gateway has to communicate with an IP Ethernet network on one side and the XBee protocol on the
+						other side. IP Ethernet is imposed by the existing test system which uses this protocol to work.
+						The XBee protocol has been suggested by the client as tests are performed inside warehouses
+						where there are different negative environmental effects for waves such as metal, posts and
+						planes. XBee appeared as the best solution. Below is the hardware diagram for this project</p>
+					<div class="text-right">
+						<button id="btnHardw" class="btn btn-primary btn-xs"
+							style="margin-top: -0.5cm;margin-bottom: 0.5cm;"
+							onclick="btnShowHide('btnHardw','divHardw','hardware conception')">Show hardware
+							conception</button>
+					</div>
+					<div id="divHardw" style="display: none;">
+						<p><img src="./assets/resource/InnovativeProject/gateway_overview.png" alt=""> <br> <br> <br>
+							<br>
+							<img src="./assets/resource/InnovativeProject/xbee_module.png" alt="">
+						</p>
+					</div>
+					<h4>Software development</h4>
+					<p style="text-align: justify;"> Unlike the hardware part, we were free to design the
+						<strong>software</strong> as we
+						thought the best. We decided to use object-oriented conception. Oriented-object
+						conception consists of defining interactions between software layers called "objects". Each
+						object corresponds to a physical entity. The objective is to defined object's structures,
+						behaviours and interactions.
+						We found two main advantages to using this method. First, we wanted to develop the software
+						around the Agile method. As we are a team of six people, we agreed that it would be more
+						efficient. Moreover as we are developing a proof of concept, we also took the scalability of our
+						prototype into account, and this method was the most suitable for potential evolutions.
+					</p>
+					<p style="text-align: justify;">The following figure shows all the classes of the gateway software
+						application that are implemented, with any dependencies between them and their interactions.
+					</p>
+					<div class="text-right">
+						<button id="btnDiag" class="btn btn-primary btn-xs"
+							style="margin-top: -0.5cm;margin-bottom: 0.5cm;"
+							onclick="btnShowHide('btnDiag','divDiag','diagram')">Show diagram</button>
+					</div>
+					<div id="divDiag" style="display: none;"><img
+							src="./assets/resource/InnovativeProject/class_diagram.png" alt="">
+					</div>
+					<p style="text-align: justify;">As mentioned above, for this
+						proof of concept STERELA has decided that the gateway will communicate with only one test box.
+						Therefore in our case, the destination address is always the same.
+						That is why we configure the module once using the XCTU program. We configure network address,
+						network role, packets static destination address and mode.
+						We have chosen the Transparent mode for its simplicity. It is adapted to communication between
+						two nodes.
+						If STERELA decides to keep the XBee technology on the production stage, the XBee_mode
+						must be changed to API mode. In this mode the module can be configured dynamically
+						while the program runs and will be able to communicate to different end-points. However,
+						API mode is more complex to use. <br> <br>
+						We used the Qt as this platform includes an IDE and implements several frameworks with the aim
+						of ease for
+						variables manipulations and transformation and also for the serial and UDP communication.
+						Moreover STERELA is already using this platform for their projects so using it would avoid
+						potential difficulties like the ease of understanding the code then the software maintenance in
+						the future. <br> <br>
+						The main programming language in Qt environment is C++. It provided the libraries and a good
+						portability of the source files . For version control system Git, we used Git/Github as it's
+						really familiar to every member of our team.
+					</p>
 					<h3>Project review and English course</h3>
 					<hr style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
+					<p style="text-align: justify;"> During my final year at ISS, the english course is deeply
+						integrated into the Innovative project. Thanks to this module, i could improve my communication
+						/ oral
+						skills in english, how to communicate scientific problem in written and spoken
+						forms. An important aspect was practiced in many many time: knowing how to propose / present and
+						justify
+						the choice of the software development environment, of hardware components...
+						And last but not least, my team and me had the chance to learn how to build a presentation of
+						the
+						PoC in an intuitive and comprehensible way. Because our audiences are maybe those one who don't
+						have technological background like we do.
+					</p>
+					<div style="margin-top: -0.5cm;">
+						<p class="text-right"><a target="_blank"
+								href="./assets/resource/InnovativeProject/project_review2.pdf"
+								class="btn btn-primary btn-xs">Link to presentation
+								&rarr;</a></p>
+					</div>
 					<h3>The outcome</h3>
 					<hr style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
 					<blockquote style="text-align: justify;"> <span>&#8220;</span> I really enjoyed this experience. The
@@ -206,17 +310,13 @@
 						work in a project from end to end for important client like Airbus and Sterela, has given me a
 						lot in terms of the organization
 						and management (time, team, project) and also the technical side (hardware & software
-						conception). <br> <br>
+						conception), all in an concrete IoT context. <br> <br>
 						The scheduled weekly meeting with the client of this project gave me and fellow members of my
 						team a clear vision of the client's expectation on the project's final proof of concept, as well
 						as justifying our technological choice. Approaching the project deadline, we had the opportunity
 						to visit Airbus campus at Saint-Martin-du-Touch near Toulouse in order to realize different
 						tests
-						of the first version of the system. <br> <br>
-
-						It was therefore a very
-						enriching experience, thanks to which I was able to take part in the realization of a project in
-						a field that attracts me greatly.
+						of the first version of the system.
 						<span>&#8221;</span>
 					</blockquote>
 					<ul>
@@ -268,7 +368,10 @@
 						working mode
 						because it allows me to think about possible solutions myself, and then what
 						improvements i can make. This approach is much more stimulating than simply following
-						instructions and reflects the engineering work that i will soon be faced with.
+						instructions and reflects the engineering work that i will soon be faced with. <br> <br>
+						It was therefore a very
+						enriching experience, thanks to which I was able to take part in the realization of a project in
+						a field that attracts me greatly.
 						<span>&#8221;</span>
 					</blockquote>
 					<br>
