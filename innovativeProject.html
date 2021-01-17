@@ -106,18 +106,20 @@
 				<aside class="col-md-4 sidebar sidebar-right">
 					<div class="widget">
 						<h4>Summary</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, ratione delectus reiciendis
-							nulla nisi pariatur molestias animi eos repellat? Vel.</p>
+						<p style="text-align: justify;">This project was realized in the context of the Internet of
+							Things project, in my fifth
+							year of Innovative Smart Systems major at the National Institute of Applied Sciences of
+							Toulouse (INSA). My team is a groupe of six engineering students, three with Computer
+							Science
+							and Network major beside the others three with Electronics and Automation major. The
+							Wireless
+							IO Tool project
+							was chosen among a list of available projects for its industrial relevancy and
+							the opportunity to work in cooperation with STERELA and Airbus.</p>
 					</div>
 					<div class="widget">
-						<h4>Lorem ipsum dolor sit</h4>
-						<ul>
-							<li><a href="">Lorem ipsum </a>dolor sit amet.</li>
-							<li>Nostrum, dolores labore tempore error.</li>
-							<li>Qui esse impedit vitae repellat.</li>
-							<li>Aliquam, laborum corporis molestiae nihil.</li>
-							<li>Voluptate, labore non adipisci nihil!</li>
-						</ul>
+						<!-- <h4>Lorem ipsum dolor sit</h4> -->
+						<img src="./assets/resource/InnovativeProject/airbus.jpeg" alt="">
 					</div>
 				</aside>
 				<!-- /Sidebar -->
@@ -130,17 +132,68 @@
 					</header>
 					<hr
 						style="text-align:left; margin-left: 0; width:95%; height:2px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
-					<p><img src="assets/images/s2.jpg" alt=""></p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus
-						eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam
-						aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam repudiandae sapiente.
-					</p>
 					<h3>Context</h3>
 					<hr style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
+					<p style="text-align: justify;">
+						Our client is STERELA, an Airbus subcontractor. They are working on a proof of concept to
+						demonstrate to Airbus the feasibility of a project in order to obtain funds from Airbus
+						to advance to the production stage. Airbus currently tests each plane on the ground before its
+						initial flight. To do this, they need to connect different wires from a computer to different
+						sensors. In this way, the computer can send simulated data in order to retrieve sensors
+						responses which allow to check the correct operating of the plane. The issue is that a cabin
+						can be 70m long and the tests can have thousands of different configurations which require
+						immense cable lengths, workforce and time to set up. <br> <br>
+						The purpose of this project is to
+						implement a wireless interface (gateway) between the plane and the computer (called the ESAO
+						work station corresponding to "Essais au Sol Assistéspar Ordinateur") to manage tests for
+						them to communicate. The gateway has to detect the planes configuration, send test signals to
+						the plane through a radio module and receive there turned values. In addition to this
+						"translation work", the gateway must be an autonomous system in order to limit the time
+						operators have to spend on it - for instance, it needs to update automatically. STERELA is
+						implementing an automated testing tool for Airbus which is composed of twoparts: a test box
+						located on the plane which implements the tests, and a gateway to mediate wireless
+						communication between the test box and a workstation. Making this communication wireless has
+						many advantages such as making the testing easier, cheaper and faster as no cables are
+						needed.
+					</p>
 					<h3>Specifications</h3>
 					<hr style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
+					<p style="text-align: justify;"> The objective is to conceive and implement a gateway machine (PC or
+						micro computer such
+						as a
+						Raspberry Pi) that serves the following functions:
+					<ul>
+						<li>Communicate with the test box through a radio module (XBee)</li>
+						<li>Communicate with the ESAO workstation through the IBMK3 protocol (Airbus protocol
+							based on Ethernet UDP)</li>
+						<li>Translates the orders from the ESAO workstation to the the test box, and vice versa
+							(data received from the test box to the workstation).</li>
+						<li>Capable of automatically update </li>
+						<li>Manage the timeouts (if a command fails to send, our machine has to send it again)
+						</li>
+					</ul>
+					We will also provide a software documentation at the end of this project.
+					</p>
+					<div class="text-right">
+						<button id=btnArchi class="btn btn-primary btn-xs"
+							onclick="btnShowHide('btnArchi','divArchi','Architecture')">Show architecture</button>
+					</div>
+					<div id="divArchi" style="display: none;"><img
+							src="./assets/resource/InnovativeProject/global_archi.png" alt="">
+					</div>
+
+
 					<h3>Project Management and Organization</h3>
+					<p style="text-align: justify;">To establish a first temporal organization we wrote a Gantt diagram
+						as follow:
+					</p>
+					<div class="text-right">
+						<button id=btnGantt class="btn btn-primary btn-xs"
+							onclick="btnShowHide('btnGantt','divGantt','timeline')">Show timeline</button>
+					</div>
+					<div id="divGantt" style="display: none;"><img src="./assets/resource/InnovativeProject/gantt.png"
+							alt="">
+					</div>
 					<hr style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
 					<h3>Technical development</h3>
 					<hr style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
@@ -148,6 +201,23 @@
 					<hr style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
 					<h3>The outcome</h3>
 					<hr style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
+					<blockquote style="text-align: justify;"> <span>&#8220;</span> I really enjoyed this experience. The
+						realization of this project was a great source of motivation for me. In addition, being able to
+						work in a project from end to end for important client like Airbus and Sterela, has given me a
+						lot in terms of the organization
+						and management (time, team, project) and also the technical side (hardware & software
+						conception). <br> <br>
+						The scheduled weekly meeting with the client of this project gave me and fellow members of my
+						team a clear vision of the client's expectation on the project's final proof of concept, as well
+						as justifying our technological choice. Approaching the project deadline, we had the opportunity
+						to visit Airbus campusat Saint-Martin-du-Touch near Toulouse in order to realize different tests
+						of the first version of the system. <br> <br>
+
+						It was therefore a very
+						enriching experience, thanks to which I was able to take part in the realization of a project in
+						a field that attracts me greatly.
+						<span>&#8221;</span>
+					</blockquote>
 					<ul>
 						<li>Analyse a real-life problem
 							<div class="skillbar" data-width="100%">
@@ -185,25 +255,17 @@
 							</div>
 						</li>
 					</ul>
-					<p>
-					<blockquote> <span>&#8220;</span> Coming from computer science, almost all of this course was a
-						discovery for me. I did
-						very little electronics during my curriculum (coming from a computer science DUT) and this
-						module being very
-						much focused on this discipline, I was able to discover and rediscover many methods and
-						concepts. I found extremely interesting the discovery of the manufacture of a sensor and it
-						makes us take another look at these sensors, especially on the fact of having to optimize the
-						manufacture of these sensors and all the reflection behind it. The integration part with a
-						shield was also very interesting, the only approach I had of the arduino before that was the
-						lighting of leds, seeing how to integrate something that has been manufactured was particularly
-						interesting. The communication part, even if it was less innovative, was also very interesting
-						and allowed me to see how to use an already established architecture (TTN) and connect it with a
-						sensor we had made. Finally, the writing of the datasheet allows us to report on what we have
-						done and to take a step back to know the useful information at the industrial level.
+					<blockquote style="text-align: justify;"> <span>&#8220;</span>
+						As the title of this training unit suggests: "Innovative Project", with only
+						a few included general guidelines, my team had the freedom
+						to manage our inventiveness and innovation to solve the problems. Personnaly, i really like this
+						working mode
+						because it allows me to think about possible solutions myself, and then what
+						improvements i can make. This approach is much more stimulating than simply following
+						instructions and reflects the engineering work that i will soon be faced with.
 						<span>&#8221;</span>
 					</blockquote>
 					<br>
-					</p>
 				</article>
 				<!-- /Article -->
 
