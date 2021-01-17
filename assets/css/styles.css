@@ -977,7 +977,7 @@ footer.entry-meta .meta-in {
 	display:block;
 	margin-top: 10px;
 	margin-bottom: 30px;
-	width:300px;
+	width:250px;
 	background:#b9b9b9;
 	height:25px;
 	border-radius:25px;
@@ -1002,7 +1002,7 @@ footer.entry-meta .meta-in {
 	border-radius:25px;
 	-moz-border-radius:25px;
 	-webkit-border-radius:25px;
-	transition: width 8s;
+	transition: width 3s;
 }
 
 .progress-percent {

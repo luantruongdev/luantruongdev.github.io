@@ -239,7 +239,7 @@ $(function () {
 				this.inView = false;
 			} else {
 				//3 for progressbar's width = 300px, 4 for progressbar's width = 400px ...
-				!this.inView && $el.css({ width: 3 * $el.data("percent") });
+				!this.inView && $el.css({ width: 2.5 * $el.data("percent") });
 				this.inView = true;
 			}
 		});
