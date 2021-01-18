@@ -178,24 +178,26 @@
 									class="btn btn-primary btn-xs">Link to report
 									&rarr;</a></p>
 						</div>
-						<h3>Middleware for Internet of Things</h3>
+						<div id="idMiddleware">
+							<h3>Middleware for Internet of Things</h3>
+						</div>
 						<hr
 							style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
-						<p>This module took place in two stages. First stage, i taught myself about the OneM2M standard
+						<p>This module took place in four stages: MQTT protocol, Sierra Wireless MangOH, OneM2M and
+							Node-red. First stage in MQTT i learnt the concept of publiser/subscriber with a broker then
+							i used the MQTT to implement a light detection application
+							with a light sensor, all of that was controled by an Arduino board. In the second stage, i
+							got a chance to take in
+							hand the mangOH cards of Sierra Wireless and their Octave Platform. I was able to use this
+							microcontrollers to detect the presented quantity of CO<sub>2</sub> in our classroom. <br>
+							<br>
+							Third stage, i taught myself about the OneM2M standard
 							and the RESTful architecture, through a MOOC. Then, i
-							carried out practical works to apply the things i've learned.
-							This module was thus able to introduce me to several standards of the Internet of Things and
-							make me use the oneM2M standard. <br> <br>
-							Thanks to this module, i acquired the following skills:
-						<ul>
-							<li>Know the different standards and the different architectures of the IoT.</li>
-							<li>Fully deploy a oneM2M RESTful architecture.</li>
-							<li>Use diffirent architectures to set up a network of sensors.</li>
-						</ul>
-
-
-
-
+							carried out practical works to apply the things into an architecture of 3 sensors. I was
+							able to create REST queries to create a resource tree for subscription managing. Finally, i
+							used nodejs and Node-Red to create a gateway between the oneM2M standard and MQTT, with the
+							creation of data entities to light lamps following different MQTT requests arriving on
+							several topics. Below is the link to my detailed report.
 						</p>
 						<div style="margin-top: -0.5cm;">
 							<p class="text-right"><a target="_blank"
@@ -206,151 +208,224 @@
 						<h3>Service Oriented Architecture</h3>
 						<hr
 							style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
-						<h3>Proof-of-Concept of INSA’s room management</h3>
-						<hr
-							style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
-						<p></p>
-						<div style="margin-top: -0.5cm;">
-							<p class="text-right"><a target="_blank"
-									href="./assets/resource/middleware/Rapport_Architecture_de_Service.pdf"
-									class="btn btn-primary btn-xs">Link to report
-									&rarr;</a></p>
+						<p>At first, this module took place gradually with the theoretical courses which allowed me to
+							understand the value of service and resource oriented architectures. A comparative approach
+							between REST and SOAP architectures in particular allowed me to know their characteristics
+							and which to choose according to the environment and the expected result.
+							Subsequently, the progressive level tutorials lead to the use of the SpringBoot framework to
+							automate and simplify the depoyment of RESTful API , which then allowed me to create my own
+							web services. More detail about this module can be found in my <a href="#divRoom"
+								class="smooth-goto"> Automatic room management</a> project.
+						</p>
+						<div id="divRoom">
+							<h3>Proof-of-Concept of INSA’s room management</h3>
+							<hr
+								style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
+							<p> In this project, my teammate and me created an IoT plartform to automate the management
+								of office room. We
+								asked ourselves
+								which scenarios to be implemented, such as: automatic closing windows, turning on
+								heating, turning off lights .... We wanted to use oneM2M to simulate different
+								sensors/actuators present in the office room.
+								We used RESTful
+								services with SpringBoot to retrieve and process the various data emitted by its
+								simulated sensors to be able to perform actions based on different usecases.
+							</p>
+							<div class="text-right">
+								<button id="btnNawal" class="btn btn-primary btn-xs"
+									style="margin-top: -0.5cm;margin-bottom: 0.5cm;"
+									onclick="btnShowHide('btnNawal','divNawal','image')">Show image</button>
+							</div>
+							<div id="divNawal" style="display: none;">
+								<p><img src="./assets/resource/middleware/onem2m.png" alt=""></p>
+								<p class="text-center"><img src="./assets/resource/middleware/lunch.png" alt=""></p>
+								<p><img src="./assets/resource/middleware/jira.png" alt=""></p>
+							</div>
+							<p>
+								To carry out this project, we organized our work according to the
+								Agile
+								Scrum method with JIRA, in particular to manage the organization
+								of
+								sprints. More in-depth detail and project's outcome could be found in the link below.
+							</p>
+							<div style="margin-top: -0.5cm;">
+								<p class="text-right"><a target="_blank"
+										href="./assets/resource/middleware/Rapport_Architecture_de_Service.pdf"
+										class="btn btn-primary btn-xs">Link to report
+										&rarr;</a></p>
+							</div>
+							<div></div>
+							<h3>The outcome</h3>
+							<hr
+								style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
+							<h4>Adaptability: Cloud and Autonomic Computing</h4>
+							<ul>
+								<li>Understand the concept of cloud computing
+									<div class="progressBackground">
+										<div class="progress-title ">Self-evaluation</div>
+										<div class="progressAnimation" data-percent="100">
+											<div class="progress-percent">3/3</div>
+										</div>
+									</div>
+								</li>
+								<li>Use a IaaS-type cloud service
+									<div class="progressBackground">
+										<div class="progress-title ">Self-evaluation</div>
+										<div class="progressAnimation" data-percent="100">
+											<div class="progress-percent">3/3</div>
+										</div>
+									</div>
+								</li>
+								<li>Deploy and adapt a cloud-based platform for IoT
+									<div class="progressBackground">
+										<div class="progress-title ">Self-evaluation</div>
+										<div class="progressAnimation" data-percent="67">
+											<div class="progress-percent">2/3</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<blockquote> <em><span>&#8220;</span> This was a good opportunity for me to discover a
+									containerisation
+									service like Docker, thus allowing me to have more knowledges about the use of
+									containers
+									and what differentiate them from virtual machines. Furthermore, this module allowed
+									me
+									to have a
+									different vision of how to implement
+									an automatic management of services deployed in the cloud. Finally, I got an
+									overview of
+									how to deploy an application on a cloud platform in order to provide access to
+									users.
+
+
+									<span>&#8221;</span> </em>
+							</blockquote>
+							<h4>Middleware for the Internet of Things</h4>
+							<ul>
+								<li>Know how to situate the main standards for the Internet of Things
+									<div class="progressBackground">
+										<div class="progress-title ">Self-evaluation</div>
+										<div class="progressAnimation" data-percent="100">
+											<div class="progress-percent">4/4</div>
+										</div>
+									</div>
+								</li>
+								<li>Deploy an architecture compliant to an IoT standard and implement a sensor network
+									<div class="progressBackground">
+										<div class="progress-title ">Self-evaluation</div>
+										<div class="progressAnimation" data-percent="100">
+											<div class="progress-percent">4/4</div>
+										</div>
+									</div>
+								</li>
+								<li>Deploy and configure and IoT architecture using OM2M
+									<div class="progressBackground">
+										<div class="progress-title ">Self-evaluation</div>
+										<div class="progressAnimation" data-percent="100">
+											<div class="progress-percent">4/4</div>
+										</div>
+									</div>
+								</li>
+								<li>Interact with the different resources of the architecture using REST services
+									<div class="progressBackground">
+										<div class="progress-title ">Self-evaluation</div>
+										<div class="progressAnimation" data-percent="75">
+											<div class="progress-percent">3/4</div>
+										</div>
+									</div>
+								</li>
+								<li>Integrate a new technology into the deployed architecture
+									<div class="progressBackground">
+										<div class="progress-title ">Self-evaluation</div>
+										<div class="progressAnimation" data-percent="75">
+											<div class="progress-percent">3/4</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<blockquote> <em><span>&#8220;</span> Thanks to this module, i acquired the following
+									skills:
+									<ul>
+										<li>Know the different standards and the different architectures of the IoT.
+										</li>
+										<li>Fully deploy a oneM2M RESTful architecture.</li>
+										<li>Use diffirent architectures to set up a network of sensors.</li>
+									</ul>
+									This module allowed me to discover the oneM2M standard and
+									RESTful web services which are both vastly used in IoT world. The labs allowed me to
+									realize
+									the power of using these technologies to develop and interact with sensor / actuator
+									networks. In particular the "generic" and "horizontal" side of the oneM2M standard
+									which
+									allows it to adapt to any field of application, whether it is home automation, smart
+									factory, or even smart city.
+									I got to know that some manufacturers such as Sierra Wireless provide resources to
+									integrate
+									their products into other platforms in order to obtain ever more possibilities. And
+									finally
+									Node-red provided an intuitive user interface to create a dashboard to represent
+									different functions of the application level.
+									<span>&#8221;</span>
+								</em>
+							</blockquote>
+							<h4>Service Oriented Architecture </h4>
+							<ul>
+								<li>Know how to define a Service Oriented Architecture
+									<div class="progressBackground">
+										<div class="progress-title ">Self-evaluation</div>
+										<div class="progressAnimation" data-percent="100">
+											<div class="progress-percent">4/4</div>
+										</div>
+									</div>
+								</li>
+								<li>Deploy an SOA with web services
+									<div class="progressBackground">
+										<div class="progress-title ">Self-evaluation</div>
+										<div class="progressAnimation" data-percent="75">
+											<div class="progress-percent">3/4</div>
+										</div>
+									</div>
+								</li>
+								<li>Deploy and configure an SOA using SOAP </li>
+								<div class="progressBackground">
+									<div class="progress-title ">Self-evaluation</div>
+									<div class="progressAnimation" data-percent="75">
+										<div class="progress-percent">3/4</div>
+									</div>
+								</div>
+								<li>Deploy and configure an SOA using REST </li>
+								<div class="progressBackground">
+									<div class="progress-title ">Self-evaluation</div>
+									<div class="progressAnimation" data-percent="100">
+										<div class="progress-percent">4/4</div>
+									</div>
+								</div>
+								<li>Integrate a process manager in an SOA </li>
+								<div class="progressBackground">
+									<div class="progress-title ">Self-evaluation</div>
+									<div class="progressAnimation" data-percent="75">
+										<div class="progress-percent">3/4</div>
+									</div>
+								</div>
+							</ul>
+
+							<blockquote> <em><span>&#8220;</span> Each aspect of this module was realized step by step
+									that was very
+									beneficial and allowed me to approach the final project with all the needed elements
+									in
+									hand. In addition, knowledge of the OM2M platform, as well as the REST architecture,
+									had already been covered in the <a href="#idMiddleware"
+										class="smooth-goto">Middleware for connected objects</a> module, which
+									facilitated my understanding and the completion of the project.
+									Completing this module thus enabled me to acquire new skills in the field of
+									middleware. I am now able to deploy a REST or SOAP type architecture in order to
+									create web services and create high-level applications to retrieve sensor data,
+									interact with actuators and define and set up specific scenarios.
+									<span>&#8221;</span> </em>
+							</blockquote>
+							<br>
 						</div>
-						<h3>The outcome</h3>
-						<hr
-							style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
-						<h4>Adaptability: Cloud and Autonomic Computing</h4>
-						<ul>
-							<li>Understand the concept of cloud computing
-								<div class="progressBackground">
-									<div class="progress-title ">Self-evaluation</div>
-									<div class="progressAnimation" data-percent="100">
-										<div class="progress-percent">3/3</div>
-									</div>
-								</div>
-							</li>
-							<li>Use a IaaS-type cloud service
-								<div class="progressBackground">
-									<div class="progress-title ">Self-evaluation</div>
-									<div class="progressAnimation" data-percent="100">
-										<div class="progress-percent">3/3</div>
-									</div>
-								</div>
-							</li>
-							<li>Deploy and adapt a cloud-based platform for IoT
-								<div class="progressBackground">
-									<div class="progress-title ">Self-evaluation</div>
-									<div class="progressAnimation" data-percent="67">
-										<div class="progress-percent">2/3</div>
-									</div>
-								</div>
-							</li>
-						</ul>
-						<blockquote> <em><span>&#8220;</span> This was a good opportunity for me to discover a
-								containerisation
-								service like Docker, thus allowing me to have more knowledges about the use of
-								containers
-								and what differentiate them from virtual machines. Furthermore, this module allowed me
-								to have a
-								different vision of how to implement
-								an automatic management of services deployed in the cloud. Finally, I got an overview of
-								how to deploy an application on a cloud platform in order to provide access to users.
-
-
-								<span>&#8221;</span> </em>
-						</blockquote>
-						<h4>Middleware for the Internet of Things</h4>
-						<ul>
-							<li>Know how to situate the main standards for the Internet of Things
-								<div class="progressBackground">
-									<div class="progress-title ">Self-evaluation</div>
-									<div class="progressAnimation" data-percent="100">
-										<div class="progress-percent">4/4</div>
-									</div>
-								</div>
-							</li>
-							<li>Deploy an architecture compliant to an IoT standard and implement a sensor network
-								<div class="progressBackground">
-									<div class="progress-title ">Self-evaluation</div>
-									<div class="progressAnimation" data-percent="100">
-										<div class="progress-percent">4/4</div>
-									</div>
-								</div>
-							</li>
-							<li>Deploy and configure and IoT architecture using OM2M
-								<div class="progressBackground">
-									<div class="progress-title ">Self-evaluation</div>
-									<div class="progressAnimation" data-percent="100">
-										<div class="progress-percent">4/4</div>
-									</div>
-								</div>
-							</li>
-							<li>Interact with the different resources of the architecture using REST services
-								<div class="progressBackground">
-									<div class="progress-title ">Self-evaluation</div>
-									<div class="progressAnimation" data-percent="75">
-										<div class="progress-percent">3/4</div>
-									</div>
-								</div>
-							</li>
-							<li>Integrate a new technology into the deployed architecture
-								<div class="progressBackground">
-									<div class="progress-title ">Self-evaluation</div>
-									<div class="progressAnimation" data-percent="75">
-										<div class="progress-percent">3/4</div>
-									</div>
-								</div>
-							</li>
-						</ul>
-						<blockquote> <em><span>&#8220;</span> at the industrial level.
-								<span>&#8221;</span> </em>
-						</blockquote>
-						<h4>Service Oriented Architecture </h4>
-						<ul>
-							<li>Know how to define a Service Oriented Architecture
-								<div class="progressBackground">
-									<div class="progress-title ">Self-evaluation</div>
-									<div class="progressAnimation" data-percent="100">
-										<div class="progress-percent">4/4</div>
-									</div>
-								</div>
-							</li>
-							<li>Deploy an SOA with web services
-								<div class="progressBackground">
-									<div class="progress-title ">Self-evaluation</div>
-									<div class="progressAnimation" data-percent="75">
-										<div class="progress-percent">3/4</div>
-									</div>
-								</div>
-							</li>
-							<li>Deploy and configure an SOA using SOAP </li>
-							<div class="progressBackground">
-								<div class="progress-title ">Self-evaluation</div>
-								<div class="progressAnimation" data-percent="75">
-									<div class="progress-percent">3/4</div>
-								</div>
-							</div>
-							<li>Deploy and configure an SOA using REST </li>
-							<div class="progressBackground">
-								<div class="progress-title ">Self-evaluation</div>
-								<div class="progressAnimation" data-percent="100">
-									<div class="progress-percent">4/4</div>
-								</div>
-							</div>
-							<li>Integrate a process manager in an SOA </li>
-							<div class="progressBackground">
-								<div class="progress-title ">Self-evaluation</div>
-								<div class="progressAnimation" data-percent="75">
-									<div class="progress-percent">3/4</div>
-								</div>
-							</div>
-						</ul>
-
-						<blockquote> <em><span>&#8220;</span> at the industrial level.
-								<span>&#8221;</span> </em>
-						</blockquote>
-						<br>
-					</div>
 				</article>
 				<!-- /Article -->
 
