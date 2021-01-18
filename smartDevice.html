@@ -170,17 +170,18 @@
 							<p><img src="./assets/resource/smartDevice/gaz_chart.jpg" alt=""></p>
 						</div>
 
-						<p>I was thus able to take part in the realization of these different stages. I was then able to
+						<p>I took part in the realization of these different stages. I was able to
 							see how the nanoparticles used today in components of smart sensor. Several steps in the
-							chip creation process had already been completed such as
+							chip creation process had also been realized by my teammate and me, such as:
 							polysilicon deposition, doping and etching, dry oxide deposition and photo-etching, and
 							metallization.
 							Once the sensors were
-							made, i were able to observe the results using a Scanning Electron Microscope (SEM), in
+							made, we observed the results using a Scanning Electron Microscope (SEM), in
 							order to verify the quality of our Integration of the sensitive layer of nanoparticles on
 							the chip.
 							Finally, we had our sensors pass a series of electrical tests in order to determine their
-							main characteristics in order to be able to formulate the gaz sensor's datasheet.</p>
+							main characteristics. The final task of this AIME intership is to formulate the gaz sensor's
+							datasheet.</p>
 						<div style="margin-top: -0.5cm;">
 							<p class="text-right"><a target="_blank"
 									href="./assets/resource/smartDevice/datasheet-gaz.pdf"
@@ -202,28 +203,30 @@
 						<h3>Integration of the gaz sensor into a smart IoT system</h3>
 						<hr
 							style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
-						<p>The objective of this module was to manage in parallel the development of the connected gas
-							sensor and the creation of the Arduino Shiled Circuit under KiCad.
-							For the first part, i used some hardware components like an Arduino Uno, an RN2483 chip
-							from Microchip for LoRa connectivity. For the second part, we used LTSpice and KiCad
+						<p>In parallel with the development of the connected gas
+							sensor, we also needed to create a Arduino Shiled Circuit under KiCad.
+							For this part, i used some hardware components like an Arduino Uno, an RN2483 chip
+							from Microchip for LoRa connectivity. In the next step, i used LTSpice and KiCad
 							to design all the specifications of the Arduino Uno board.
 						</p>
-						<p>The PCB design and circuit routing on KiCad was not new to me. KiCad is a very
-							powerful tool with a lot of possibilities to design a functional circut. Under KiCad, i can
-							import a basic model of Arduino Uno. Then i can select the pins of the board that i'm going
-							to
-							use. Unused pins can be changed to "not connected", which avoids having floating pins.
-							Subsequently, i created the LTC1050 operational amplifier which was not included in KiCad
-							default libraries. We needed to download the corresponding symbol and then add it to the
-							KiCad library. We did the same for the RN2483 chip. We also created a model of the gas
-							sensor: a variable resistance (to simulate the heating resistance) with a fixed value
-							resistance. Afterwards, we were able to create our circuit after adding the necessary
-							resistors and capacitors for each filter.
+						<p>The PCB design and circuit routing on KiCad was not new to me. KiCad is a
+							powerful tool with a lot of libraries to design a functional circut. KiCad also
+							provided a friendly user interface that facilitate the search of components.
+							With Kicad, i could easily import a basic model of Arduino Uno, then i chose the pin that i
+							want to connect with my shield circuit, i also took in account the floating state of unused
+							pin.
+							Unfortunately, the LTC1050 operational amplifier and the RN2483 was not included in KiCad
+							default libraries. I needed to download the corresponding symbol and then an importation to
+							KiCad library had solved the problem. I also added a potentiometer to imitate the
+							the gas
+							sensor. Finally, i able to create my circuit after adding other components like:
+							resistors and capacitors for each low-pass filter.
 						</p>
-						<p>In order to be able to integrate our sensor to an electronic board, i also had to realize a
-							signal conditioner which is also a impedance matching circuit. This one was going to allow
-							to modify the current to increase it because
-							of the great resistance that represents our gaz sensor.
+						<p>To integrate the gas sensor to the main cicuit, i also realized a
+							signal conditionning circuit which is also a impedance matching circuit. This step allowed
+							me to
+							amplify the current and get a much bigger output voltage, which then became the input to my
+							Arduino board.
 						</p>
 						<p>Below are some images of this process.
 						</p>
@@ -242,7 +245,10 @@
 
 						<p> The next part was carried out by me and my teammate Michael. First,
 							we connected the gas sensor to the Arduino Uno board in order to retrieve the values ​​that
-							we then sent to the LoRa network. Then, thanks to The Things Network and Node-RED, we
+							we then sent to the LoRa network, that meant we had to extract the payload from the
+							incoming data frame. After data extraction, we also had to decrypt it and translate it to
+							humain readable data, like value of voltage. Then, thanks to The Things Network and
+							Node-RED, we
 							created a dashboard allowing the user to view the value of the gas sensor and to calibrate
 							it if necessary.
 						</p>
