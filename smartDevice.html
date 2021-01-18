@@ -195,42 +195,66 @@
 						</h4>
 						<h4>Electrical characterization of the sensor under controlled atmosphere</h4> -->
 
-						<h3>Design and simulation of the Shield Circuit</h3>
+						<!-- <h3>Design and simulation of the Shield Circuit</h3>
+						<hr
+							style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" /> -->
+
+						<h3>Integration of the gaz sensor into a smart IoT system</h3>
 						<hr
 							style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
-						<p>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio
-							quae
-							maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta
-							aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur
-							eius
-							repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat
-							consectetur quam aliquam!</p>
-						<blockquote>blabla quote </blockquote>
-						<p>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio
-							quae
-							maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta
-							aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur
-							eius
-							repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat
-							consectetur quam aliquam!</p>
-						<ul>
-							<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus!</li>
-							<li>Laboriosam, aliquam totam asperiores nam velit voluptatum non quidem.</li>
-							<li>Voluptatem, libero quia voluptatum ab modi facere dolore assumenda?</li>
-							<li>Expedita, officia tenetur doloremque nulla temporibus ab voluptates adipisci.</li>
-							<li>Nostrum, nesciunt, inventore amet temporibus officia perferendis doloremque nulla.</li>
-							<li>Dolorum, ex earum maiores perspiciatis modi sequi odit mollitia.</li>
-						</ul>
-						<h3>Software development for IoT's smart device</h3>
-						<hr
-							style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
-						<p>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio
-							quae
-							maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta
-							aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur
-							eius
-							repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat
-							consectetur quam aliquam!</p>
+						<p>The objective of this module was to manage in parallel the development of the connected gas
+							sensor and the creation of the Arduino Shiled Circuit under KiCad.
+							For the first part, i used some hardware components like an Arduino Uno, an RN2483 chip
+							from Microchip for LoRa connectivity. For the second part, we used LTSpice and KiCad
+							to design all the specifications of the Arduino Uno board.
+						</p>
+						<p>The PCB design and circuit routing on KiCad was not new to me. KiCad is a very
+							powerful tool with a lot of possibilities to design a functional circut. Under KiCad, i can
+							import a basic model of Arduino Uno. Then i can select the pins of the board that i'm going
+							to
+							use. Unused pins can be changed to "not connected", which avoids having floating pins.
+							Subsequently, i created the LTC1050 operational amplifier which was not included in KiCad
+							default libraries. We needed to download the corresponding symbol and then add it to the
+							KiCad library. We did the same for the RN2483 chip. We also created a model of the gas
+							sensor: a variable resistance (to simulate the heating resistance) with a fixed value
+							resistance. Afterwards, we were able to create our circuit after adding the necessary
+							resistors and capacitors for each filter.
+						</p>
+						<p>In order to be able to integrate our sensor to an electronic board, i also had to realize a
+							signal conditioner which is also a impedance matching circuit. This one was going to allow
+							to modify the current to increase it because
+							of the great resistance that represents our gaz sensor.
+						</p>
+						<p>Below are some images of this process.
+						</p>
+						<div class="text-right">
+							<button id="btnCircuit" class="btn btn-primary btn-xs"
+								style="margin-top: -0.5cm;margin-bottom: 0.5cm;"
+								onclick="btnShowHide('btnCircuit','divCircuit','image')">Show image</button>
+						</div>
+						<div id="divCircuit" style="display: none;">
+							<p class="text-center"><img src="./assets/resource/smartDevice/adapt_circuit.jpg" alt="">
+							</p>
+							<p><img src="./assets/resource/smartDevice/simulation.png" alt=""></p>
+							<p><img src="./assets/resource/smartDevice/shield_kicad1.png" alt=""></p>
+							<p><img src="./assets/resource/smartDevice/shiled_kicad2.png" alt=""></p>
+						</div>
+
+						<p> The next part was carried out by me and my teammate Michael. First,
+							we connected the gas sensor to the Arduino Uno board in order to retrieve the values ​​that
+							we then sent to the LoRa network. Then, thanks to The Things Network and Node-RED, we
+							created a dashboard allowing the user to view the value of the gas sensor and to calibrate
+							it if necessary.
+						</p>
+						<div class="text-right">
+							<button id="btnArdu" class="btn btn-primary btn-xs"
+								style="margin-top: -0.5cm;margin-bottom: 0.5cm;"
+								onclick="btnShowHide('btnArdu','divArdu','image')">Show image</button>
+						</div>
+						<div id="divArdu" style="display: none;">
+							<p><img src="./assets/resource/smartDevice/DataReception.PNG" alt=""></p>
+							<p><img src="./assets/resource/smartDevice/code_gaz.jpg" alt=""></p>
+						</div>
 						<h3>The Outcome</h3>
 						<hr
 							style="height:1px;border:none;color:rgb(199, 196, 192);background-color:rgb(199, 196, 192);" />
