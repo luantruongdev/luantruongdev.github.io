@@ -923,21 +923,21 @@ footer.entry-meta .meta-in {
 
   /* .casourel =  casourel's border */
   .carousel {
-	width:370px;
-	height:250px;
+	width:350px;
+	height:240px;
 	margin: 0 auto;
 	overflow:hidden;
   } 
 
   /* casourel's slide part */
   .carousel-inner {
-	width: 370px;
+	width: 350px;
 	height: 100%;
 	margin: 0 auto;
   }
 
   .carousel-inner > .item >img {
-	height: 250px; /* make this height = carousel's height*/
+	height: 240px; /* make this height = carousel's height*/
  }
 
 /* crop or resize image inside casourel */
