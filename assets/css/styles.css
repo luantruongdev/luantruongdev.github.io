@@ -923,7 +923,7 @@ footer.entry-meta .meta-in {
 
   /* .casourel =  casourel's border */
   .carousel {
-	width:400px;
+	width:370px;
 	height:250px;
 	margin: 0 auto;
 	overflow:hidden;
@@ -931,13 +931,13 @@ footer.entry-meta .meta-in {
 
   /* casourel's slide part */
   .carousel-inner {
-	width: 400px;
+	width: 370px;
 	height: 100%;
 	margin: 0 auto;
   }
 
   .carousel-inner > .item >img {
-	height: 300px;
+	height: 250px; /* make this height = carousel's height*/
  }
 
 /* crop or resize image inside casourel */
