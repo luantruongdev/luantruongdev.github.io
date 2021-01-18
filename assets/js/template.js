@@ -101,12 +101,13 @@ jQuery(document).ready(function ($) {
 	// 	return false;
 	// });
 
-	// $('#carousel-example-generic').carousel();
+
 	// $('#carousel-example-2').carousel();
-	// 4s for new slide in carousel
-	// $('.carousel').carousel({
-	// 	interval: 4000
-	// })
+	$('#carousel-example-generic').carousel();
+	//4s for new slide in carousel
+	$('.carousel').carousel({
+		interval: 4000
+	})
 
 	// $("#btnShowHide").click(function () {
 	// 	$("#divShowHide").toggle();
